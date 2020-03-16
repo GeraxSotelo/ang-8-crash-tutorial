@@ -10,7 +10,7 @@
   <strong>You said: </strong> {{name}}
 </div>
 
-<div class="play-container" [class.active]="clickCounter > 4">
+<div class="play-container" [ngClass]="setClasses()">
   <!-- specific to angular 8 -->
   <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
     <p>The click counter is greater than 4.</p>

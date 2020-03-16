@@ -1,1 +1,10 @@
-<p>list works!</p>
+<h1>Breweries</h1>
+
+<!-- *ngIf for adding or removing a single element and its children -->
+<ul *ngIf="brews">
+  <li *ngFor="let brew of brews">
+    <p class="name">{{brew.name}}</p>
+    <p class="country">{{brew.country}}</p>
+    <a href="{{brew.website_url}}" class="site">Site</a>
+  </li>
+</ul>

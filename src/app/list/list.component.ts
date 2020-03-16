@@ -8,12 +8,18 @@ import { HttpService } from '../http.service';
 })
 export class ListComponent implements OnInit {
 
+  brews: Object;
+
   //reference the HttpService through dependency injection
   constructor(private _http: HttpService) { }
 
   //ngOnInit is a life cycle hook. Runs when the component is loaded
   ngOnInit(): void {
-    this._http.myMethod();
+    this._http.getBeer().subscribe(data => {
+      this.brews = data;
+      console.log(this.brews);
+
+    });
   }
 
 }
